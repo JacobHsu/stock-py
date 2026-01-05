@@ -6,11 +6,11 @@ def load_stocks_from_csv(filename):
     df = pd.read_csv(filename)
     return dict(zip(df['name'], df['code']))
 
-def get_yf_closes(ticker, period="3mo", interval="1d"):
+def get_yf_closes(ticker, period="6mo", interval="1d"):
     df = yf.download(ticker, period=period, interval=interval, progress=False)
     return df['Close']
 
-def check_golden_death_cross(closes, short=5, long=20):
+def check_golden_death_cross(closes, short=20, long=60):
     if closes is None or closes.empty:
         return "資料不足"
     # 若已經是DataFrame就直接用，否則轉成DataFrame
@@ -48,8 +48,8 @@ if __name__ == "__main__":
 
     golden_list = []
     for name, ticker in stocks.items():
-        closes = get_yf_closes(ticker, period="3mo")
-        if closes is None or closes.empty or len(closes) < 21:
+        closes = get_yf_closes(ticker, period="6mo")
+        if closes is None or closes.empty or len(closes) < 61:
             continue
         result = check_golden_death_cross(closes)
         if result == "黃金交叉":

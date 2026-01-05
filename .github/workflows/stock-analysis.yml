@@ -1,0 +1,38 @@
+name: Stock Analysis
+
+on:
+  schedule:
+    # 台灣時間每週一 9:30 (UTC+8) = UTC 1:30
+    - cron: '30 1 * * 1'
+  workflow_dispatch:  # 允許手動觸發
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run stock analysis
+        run: |
+          python generate_report.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: 更新股票分析報告 $(date +'%Y-%m-%d %H:%M')" && git push)
