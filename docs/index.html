@@ -99,16 +99,20 @@
             gap: 0.75rem;
         }
         .stock-item {
+            display: block;
             background: hsl(0 0% 100%);
             border: 1px solid hsl(240 5.9% 90%);
             border-radius: 0.375rem;
             padding: 0.875rem 1rem;
             transition: all 0.15s ease;
-            cursor: default;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
         }
         .stock-item:hover {
             border-color: hsl(240 5.9% 70%);
             box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            transform: translateY(-1px);
         }
         .stock-item.golden {
             border-left: 3px solid hsl(47.9 95.8% 53.1%);
@@ -173,7 +177,7 @@
     <div class="container">
         <header>
             <h1>台股技術分析報告</h1>
-            <div class="update-time">更新時間：2026-01-05 23:01:18</div>
+            <div class="update-time">更新時間：2026-01-12 02:17:42</div>
         </header>
 
         <div class="section">
@@ -187,10 +191,10 @@
                         <span class="badge badge-golden">1 檔</span>
                     </div>
                     <div class="stock-grid">
-            <div class="stock-item golden">
-                <div class="stock-name">國巨</div>
-                <div class="stock-ticker">2327.TW</div>
-            </div>
+            <a href="https://ifa.ai/tw-stock/2412/technical-chart" target="_blank" class="stock-item golden">
+                <div class="stock-name">中華電</div>
+                <div class="stock-ticker">2412.TW</div>
+            </a>
         </div>
                 </div>
 
@@ -212,67 +216,37 @@
                 <div class="subsection">
                     <div class="subsection-header">
                         <h3>黃金交叉</h3>
-                        <span class="badge badge-golden">5 檔</span>
+                        <span class="badge badge-golden">4 檔</span>
                     </div>
                     <div class="stock-grid">
-            <div class="stock-item golden">
-                <div class="stock-name">亞泥</div>
-                <div class="stock-ticker">1102.TW</div>
-            </div>
+            <a href="https://ifa.ai/tw-stock/2347/technical-chart" target="_blank" class="stock-item golden">
+                <div class="stock-name">聯強</div>
+                <div class="stock-ticker">2347.TW</div>
+            </a>
         
-            <div class="stock-item golden">
-                <div class="stock-name">宏碁</div>
-                <div class="stock-ticker">2353.TW</div>
-            </div>
+            <a href="https://ifa.ai/tw-stock/2540/technical-chart" target="_blank" class="stock-item golden">
+                <div class="stock-name">愛山林</div>
+                <div class="stock-ticker">2540.TW</div>
+            </a>
         
-            <div class="stock-item golden">
-                <div class="stock-name">大毅</div>
-                <div class="stock-ticker">2478.TW</div>
-            </div>
+            <a href="https://ifa.ai/tw-stock/3533/technical-chart" target="_blank" class="stock-item golden">
+                <div class="stock-name">嘉澤</div>
+                <div class="stock-ticker">3533.TW</div>
+            </a>
         
-            <div class="stock-item golden">
-                <div class="stock-name">神達</div>
-                <div class="stock-ticker">3706.TW</div>
-            </div>
-        
-            <div class="stock-item golden">
-                <div class="stock-name">啟碁</div>
-                <div class="stock-ticker">6285.TW</div>
-            </div>
+            <a href="https://ifa.ai/tw-stock/4137/technical-chart" target="_blank" class="stock-item golden">
+                <div class="stock-name">麗豐-KY</div>
+                <div class="stock-ticker">4137.TW</div>
+            </a>
         </div>
                 </div>
 
                 <div class="subsection">
                     <div class="subsection-header">
                         <h3>死亡交叉</h3>
-                        <span class="badge badge-death">5 檔</span>
+                        <span class="badge badge-death">0 檔</span>
                     </div>
-                    <div class="stock-grid">
-            <div class="stock-item death">
-                <div class="stock-name">聯華</div>
-                <div class="stock-ticker">1229.TW</div>
-            </div>
-        
-            <div class="stock-item death">
-                <div class="stock-name">華城</div>
-                <div class="stock-ticker">1519.TW</div>
-            </div>
-        
-            <div class="stock-item death">
-                <div class="stock-name">川湖</div>
-                <div class="stock-ticker">2059.TW</div>
-            </div>
-        
-            <div class="stock-item death">
-                <div class="stock-name">材料-KY</div>
-                <div class="stock-ticker">4763.TW</div>
-            </div>
-        
-            <div class="stock-item death">
-                <div class="stock-name">潤泰新</div>
-                <div class="stock-ticker">9945.TW</div>
-            </div>
-        </div>
+                    <div class="empty-message">目前無符合條件的股票</div>
                 </div>
             </div>
         </div>
